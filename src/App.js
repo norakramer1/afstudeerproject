@@ -1,11 +1,12 @@
 import './App.css';
+import Title from './comps/Title';
+import Events from './comps/Events';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>i think we did it team</p>
-      </header>
+           <Title/>
+           <Events/>
     </div>
   );
 }
