@@ -1,15 +1,39 @@
 import React from 'react';
-import useFirestore from '../hooks/useFirestore';
+import { useEffect, useState } from 'react';
+import { db } from '../firebase/config';
+import { collection, getDocs } from 'firebase/firestore';
 
-const Events = () => {
-    const { docs } = useFirestore('events');
-    console.log(docs);
-    return (
-        <div className="events">
-        <h1>Events</h1>
-        <p>Events are coming soon.</p>
-        </div>
-    )
-    }
+function Events() {
+  const [events, setEvents] = useState([]);
+  const colRef = collection(db, 'events');
+  
+useEffect(() => {
 
+  const getEvents = async () => {
+    const data = await getDocs(colRef);
+    setEvents(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
+  };
+getEvents();
+}, []);
+
+return (
+  <div className="Events">
+     <ul>
+
+    {events.map((event) => {
+     return (
+      <li key={event.id}>
+        {" "}
+        
+        <h1>Title: {event.eventName}</h1>
+        <p>Description: {event.eventDescription}</p>
+        {event.eventTitleImage && <img src={event.eventTitleImage} alt="event" />}
+        </li>
+ 
+        );
+     })}
+         </ul> 
+  </div>
+);
+}
 export default Events;

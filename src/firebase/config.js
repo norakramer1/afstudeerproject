@@ -1,25 +1,28 @@
 // Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-import * as firebase from 'firebase/app';
-import 'firebase/storage'; 
-import 'firebase/firestore';
+import { initializeApp } from "firebase/app";
+import { getFirestore } from 'firebase/firestore';
+
+
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyA1Ffq4dv-kWrgWnnGDops24QSL-lq1yYI",
-    authDomain: "cmd-culture-app.firebaseapp.com",
-    projectId: "cmd-culture-app",
-    storageBucket: "cmd-culture-app.appspot.com",
-    messagingSenderId: "785451233117",
-    appId: "1:785451233117:web:88d4af27595ec4459582b4"
+    apiKey: process.env.REACT_APP_FIREBASE_API,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID
   };
 
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
 
-  const projectStorage = firebase.storage();
-  const projectFirestore = firebase.firestore();
 
-export { projectStorage, projectFirestore };
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+export const db = getFirestore(app);
+
+
+//, projectStorage, projectFirestore

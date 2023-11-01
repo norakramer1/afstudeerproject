@@ -1,14 +1,13 @@
-import './App.css';
-import Title from './comps/Title';
+// import Title from './comps/Title';
+// import { collection, getDocs } from 'firebase/firestore';
 import Events from './comps/Events';
 
-function App() {
+ function App() {
+
   return (
     <div className="App">
-           <Title/>
-           <Events/>
+   <Events/>
     </div>
   );
 }
-
-export default App;
+ export default App;
