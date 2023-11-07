@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';
 import { getAuth } from "firebase/auth";
+import { getAnalytics } from "firebase/analytics"
 
 
 // Your web app's Firebase configuration
@@ -11,7 +12,8 @@ const firebaseConfig = {
     projectId: process.env.REACT_APP_PROJECT_ID,
     storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
     messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID,
-    appId: process.env.REACT_APP_FIREBASE_APP_ID
+    appId: process.env.REACT_APP_FIREBASE_APP_ID,
+    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
   };
 
 
@@ -23,4 +25,5 @@ export const db = getFirestore(app);
 
 // Initialize Firebase Authentication and get a reference to the service
 export const auth = getAuth(app);
+export const analytics = getAnalytics(app);
 
