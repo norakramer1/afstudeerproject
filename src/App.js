@@ -4,17 +4,20 @@ import Events from './comps/Events';
 import Login from './comps/Login';
 import Signup from './comps/Signup';
 import { Routes, Route } from 'react-router-dom';
+import { AuthContextProvider } from './context/AuthContext';
 
  function App() {
 
   return (
     <div className="App">
 
-   <Routes>
-    <Route path="/signup" element={<Signup />} />
-    <Route path="/login" element={<Login />} />
-    <Route path="/" element={<Events/>} />
-   </Routes>
+    <AuthContextProvider>
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Events/>} />
+      </Routes>
+    </AuthContextProvider>
     </div>
   );
 }

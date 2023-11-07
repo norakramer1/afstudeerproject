@@ -23,7 +23,7 @@ return (
     {events.map((event) => {
      return (
       <li key={event.id}>
-        {" "}
+        {/* {" "} */}
         
         <h1>Title: {event.eventName}</h1>
         <p>Description: {event.eventDescription}</p>
