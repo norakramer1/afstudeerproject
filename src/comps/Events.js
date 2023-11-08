@@ -9,6 +9,8 @@ function Events() {
   
 useEffect(() => {
 
+  // check if the interest of the logged in user matches the interest of the event
+
   const getEvents = async () => {
     const data = await getDocs(colRef);
     setEvents(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
