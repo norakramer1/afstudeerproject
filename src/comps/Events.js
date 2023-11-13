@@ -53,7 +53,7 @@ function Events() {
   return (
     <div className="Events">
       <ul>
-        {events.map((event) => {
+        {matches.map((event) => {
           return (
             <li key={event.id}>
               <h1>Title: {event.eventName}</h1>
@@ -63,15 +63,6 @@ function Events() {
           );
         })}
       </ul>
-      {/* You can now use the userInterests state to access the logged-in user's interests */}
-      <div>
-        <h2>User Interests:</h2>
-        <ul>
-          {userInterests.map((interest, index) => (
-            <li key={index}>{interest}</li>
-          ))}
-        </ul>
-      </div>
     </div>
   );
 }
