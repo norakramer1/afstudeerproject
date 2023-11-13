@@ -13,6 +13,7 @@ const Signup = () => {
   const { createUser } = UserAuth();
   const navigate = useNavigate();
 
+  // Handle checkbox changes in react
   const handleInterestChange = (e, interest) => {
     if (e.target.checked) {
       setInterests([...interests, interest]);

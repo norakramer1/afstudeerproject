@@ -1,5 +1,3 @@
-// import Title from './comps/Title';
-// import { collection, getDocs } from 'firebase/firestore';
 import Events from './comps/Events';
 import Login from './comps/Login';
 import Signup from './comps/Signup';
