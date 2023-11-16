@@ -1,63 +1,60 @@
+
 import React, { useEffect, useState } from 'react';
 import { db } from '../firebase/config';
-import { collection, getDocs, getDoc, doc, query, where } from 'firebase/firestore';
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { collection, getDocs } from 'firebase/firestore';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
-function Events() {
-  const [events, setEvents] = useState([]);
-  const [userInterests, setUserInterests] = useState([]);
-  const [matches, setMatches] = useState([]); 
-  const colRef = collection(db, 'events');
-  const userRef = collection(db, 'users');
+  function Events() {
+   const matchingEvents = [];
+//   const [matchingEvents, setMatchingEvents] = useState([]);
+//   const colRef = collection(db, 'events');
+//   const userRef = collection(db, 'users');
+//   const auth = getAuth();
 
+//   useEffect(() => {
+//     // Set up the listener only once when the component mounts
+//     const unsubscribe = onAuthStateChanged(auth, async (user) => {
+//       if (user) {
+//         try {
+//           const data = await getDocs(colRef);
+//           const events = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+// console.log(events);
+//           // Additional logic for user-specific filtering if needed
+//           // const snapshot = await getDoc(doc(userRef, user.uid));
+//           // const userInterests = snapshot.data().interests;
+//           // const matchingEvents = events.filter((event) =>
+//           //   event.interest.some((eventInterest) =>
+//           //     userInterests.includes(eventInterest)
+//           //   )
+//           // );
 
-  const auth = getAuth();
-  onAuthStateChanged(auth, async (user) => {
+//           setMatchingEvents(events);
+//         } catch (error) {
+//           console.error('Error fetching events:', error);
+//         }
+//       } else {
+//         // User is signed out
+//       }
+//     });
 
-    if (user) {
-      const snapshot = await getDoc(doc(userRef, user.uid))
-      const userInterests = snapshot.data().interests;
+//     // Unsubscribe when the component is unmounted
+//     return () => {
+//       console.log('unsubscribed');
+//       unsubscribe();
       
-       const matches = [];
+//     };
+//   }, []); // Empty dependency array ensures this effect runs once after the initial render
 
-      // console.log('allEvents', events, 'userInterests', userInterests)
- 
-      // Filter and find matches
-      const matchingEvents = events.filter(event =>
-        event.interest.some(eventInterest =>
-           userInterests.includes(eventInterest)
-          // matches.push(event)
-        )
-      );
-
-
-      setMatches(matchingEvents);
-      
-       // console.log('FIN:', matchingEvents);// Update the matches state with the matching events
-    
-
-    } else {
-      // User is signed out
-    }
-  });
-
-
-  useEffect(() => {
-    const getEvents = async () => {
-      const data = await getDocs(colRef);
-      setEvents(data.docs.map((doc) => ({...doc.data(), id: doc.id})));  
-    };
-    getEvents();
-  }, []);
- 
   return (
     <div className="Events">
       <ul>
-        {matches.map((event) => {
+        {matchingEvents.map((event) => {
           return (
             <li key={event.id}>
-              <h1>Title: {event.eventName}</h1>
-              <p>Description: {event.eventDescription}</p>
+              <h2>{event.title}</h2>
+              <p>{event.description}</p>
+              <p>Locatie: {event.location}</p>
+              <p>Organisator: {event.organizer}</p>
               {event.eventTitleImage && <img src={event.eventTitleImage} alt="event" />}
             </li>
           );
@@ -68,3 +65,4 @@ function Events() {
 }
 
 export default Events;
+

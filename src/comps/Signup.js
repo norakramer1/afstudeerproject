@@ -63,63 +63,98 @@ const addUserInterestsToFirestore = async (uid, interests) => {
     return (
 <div>
     <div className="Signup">
-        <h1>Signup</h1>
-        <p>Sign up to create your account</p>
-        <p>Already have an account?  <Link to='/login'>Sign in</Link></p>
-    </div>
+        <h1>Maak een account</h1>
+        <p>Heb je al een account?  <Link to='/login'>Login</Link></p>
+   
 
     <div className="form">
         <form onSubmit={handleSubmit}>
-            <label htmlFor="username">Username</label>
+            {/* <label htmlFor="username">Username</label> */}
             <input type="text" placeholder="Username" />
 
-            <label htmlFor="email">Email</label>
+            {/* <label htmlFor="email">Email</label> */}
             <input onChange={(e) => setEmail(e.target.value)} type="text" placeholder="Email" />
 
-            <label htmlFor="password">Password</label>
+            {/* <label htmlFor="password">Password</label> */}
             <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
+            
+            <div className="interests">
+            <input
+                type="checkbox"
+                id="Kunst"
+                name="interest"
+                value="Kunst"
+                onChange={(e) => handleInterestChange(e, "Kunst")}
+            />
+            <label htmlFor="Kunst">Kunst</label>
 
             <input
                 type="checkbox"
-                id="art"
+                id="Theater"
                 name="interest"
-                value="art"
-                onChange={(e) => handleInterestChange(e, "art")}
+                value="Theater"
+                onChange={(e) => handleInterestChange(e, "Theater")}
             />
-            <label htmlFor="art">Art</label>
+            <label htmlFor="Theater">Theater</label>
 
             <input
                 type="checkbox"
-                id="theater"
+                id="Muziek"
                 name="interest"
-                value="theater"
-                onChange={(e) => handleInterestChange(e, "theater")}
+                value="Muziek"
+                onChange={(e) => handleInterestChange(e, "Muziek")}
             />
-            <label htmlFor="theater">Theater</label>
+            <label htmlFor="Muziek">Muziek</label>
 
             <input
                 type="checkbox"
-                id="music"
+                id="Film"
                 name="interest"
-                value="music"
-                onChange={(e) => handleInterestChange(e, "music")}
+                value="Film"
+                onChange={(e) => handleInterestChange(e, "Film")}
             />
-            <label htmlFor="music">Music</label>
+            <label htmlFor="Film">Film</label>
 
-            <input
+               <input
                 type="checkbox"
-                id="film"
+                id="Design"
                 name="interest"
-                value="film"
-                onChange={(e) => handleInterestChange(e, "film")}
+                value="Design"
+                onChange={(e) => handleInterestChange(e, "Design")}
             />
-            <label htmlFor="film">Film</label>
+            <label htmlFor="Film">Film</label>
 
-{/* Add similar input elements for other interests */}
+               <input
+                type="checkbox"
+                id="Games"
+                name="interest"
+                value="Games"
+                onChange={(e) => handleInterestChange(e, "Games")}
+            />
+            <label htmlFor="Games">Games</label>
 
+               <input
+                type="checkbox"
+                id="Reizen"
+                name="interest"
+                value="Reizen"
+                onChange={(e) => handleInterestChange(e, "Reizen")}
+            />
+            <label htmlFor="Reizen">Reizen</label>
+
+               <input
+                type="checkbox"
+                id="Sport"
+                name="interest"
+                value="Sport"
+                onChange={(e) => handleInterestChange(e, "Sport")}
+            />
+            <label htmlFor="Sport">Sport</label>
+            </div>
             
             <button type="submit">Sign up</button>
         </form>
+      </div>
     </div>
   </div>
  )

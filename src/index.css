@@ -1,6 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+font-family: 'work sans', sans-serif;
+}
+
+.Signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
 
 }
+
+input[type='text'], input[type='password'] {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  padding: 8px 40px;
+  border: 1px solid black;
+  
+}
+
+.interests {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 50%;
+  padding-top: 20px;
+
+  
+}
+
+
