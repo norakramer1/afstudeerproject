@@ -57,7 +57,12 @@ console.log(events);
               <p>{event.description}</p>
               <p>Locatie: {event.location}</p>
               <p>Organisator: {event.organizer}</p>
-              {event.eventTitleImage && <img src={event.eventTitleImage} alt="event" />}
+              
+              <div>
+                  {event.eventTitleImage && event.eventTitleImage.map((eventTitleImage, index) => (
+                    <img key={index} src={eventTitleImage} alt={event.title} />
+                  ))}
+                </div>
             </li>
           );
         })}
