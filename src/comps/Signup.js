@@ -161,7 +161,9 @@ const Signup = () => {
               <label htmlFor="Sport">Sport</label>
             </div>
 
-            <button type="submit">Sign up</button>
+            <button type="submit" className="Submit">
+              Sign up
+            </button>
           </form>
         </div>
       </div>
