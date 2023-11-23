@@ -34,7 +34,7 @@ font-family: 'inter', sans-serif;
 /* background-color: var(--primary-medium-blue); */
 }
 
-.Signup, .Login {
+.Signup-title, .Login {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,14 +42,14 @@ font-family: 'inter', sans-serif;
   margin-top: 30vh;
 }
 
-.Signup h1, .Login h1, .Signup p, .Login p {
+.Signup-title h1, .Login h1, .Signup-title p, .Login p {
   text-align: center;
 }
 
 h1 {
   font-size: var(--font-large);
   /* color: var(--neutral-white); */
-  margin-bottom: 20px;
+  margin: 50px 25px 0;
 }
 
 p {
@@ -60,6 +60,11 @@ p {
 a {
   color: var(--primary-medium-purple);
   font-size: var(--font-small);
+}
+
+a:hover {
+  color: var(--primary-darkest-purple);
+  transition: 0.5s;
 }
 
 form {
@@ -103,8 +108,13 @@ input[type='text']:focus, input[type='password']:focus {
   cursor: pointer;
 }
 
+.Submit:hover {
+  background-color: var(--primary-darkest-purple);
+  transition: 0.5s;
+}
 .Interests {
   /* display: none; */
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   max-width: 50%;
@@ -112,22 +122,22 @@ input[type='text']:focus, input[type='password']:focus {
 
   
 }
+
+.AllEvents {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+ max-width: 100vw;
+}
 .Event {
-  position: relative;
   display: flex;
   flex-direction: column;
-  /* align-items: center;
-  justify-content: center; */
+  position: relative;
   margin-top: 10vh;
   margin: 0 20px 25px;
   height: 450px;
+  list-style-type: none;
 }
-
-.Event:first-of-type {
-  margin-top: 25%;
-}
-
-
 
 .EventImages {
   display: flex;
@@ -142,17 +152,22 @@ input[type='text']:focus, input[type='password']:focus {
   display: none;
 }
 
-.EventCategories {
+.Filters {
+margin: 5px 0 0 20px;
+}
+
+.EventCategories, .Filters {
   position: relative;
-  top: 40px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-
-
 }
-.EventCategory {
-  background-color: var(--primary-medium-purple);
+
+.EventCategories {
+  top: 40px;
+}
+.EventCategory, .Filter {
+
   color: var(--neutral-white);
   text-decoration: none;
   border-radius: 25px;
@@ -161,6 +176,16 @@ input[type='text']:focus, input[type='password']:focus {
   font-size: var(--font-small);
   font-weight: bold;
   margin: 0 5px;
+}
+
+.EventCategory {
+  background-color: var(--primary-medium-purple);
+}
+
+.Filter {
+  background-color: var(--contrast-green);
+  color: var(--neutral-black);
+  list-style: none;
 }
 
 .EventCategory:first-of-type {
@@ -186,7 +211,31 @@ input[type='text']:focus, input[type='password']:focus {
   display: flex;
   flex-direction: column;
   align-self: center;
+  max-width: 520px;
   
+}
+
+.EventInfo-date {
+  font-size: var(--font-small);
+}
+
+.EventInfo-date:before, .EventInfo-location:before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin-top: 4px;
+}
+
+.EventInfo-date:before {
+  background: url("icons/clock.svg") no-repeat;
+
+}
+
+.EventInfo-location:before {
+  background: url("icons/location.svg") no-repeat;
+
 }
 
 .EventInfo-friend {
@@ -215,9 +264,85 @@ input[type='text']:focus, input[type='password']:focus {
   text-decoration: none;
   border-radius: 25px;
   height: 30px;
-  padding: 5px 15px;
+  padding: 0 15px;
   font-size: var(--font-small);
   font-weight: bold;
   cursor: pointer;
 }
 
+
+/* sign up checkbox styling */
+
+.Interests input {
+  position: absolute;
+  left: -100vw; /* don't hide the input but move it out of view instead for better accessibility   */
+}
+
+.Interests label {
+  background-color: transparent;
+  border: 1px solid var(--primary-medium-purple);
+  color: var(--primary-medium-purple);
+  text-decoration: none;
+  border-radius: 25px;
+  padding: 10px 25px;
+  margin: 0 5px 5px 5px; 
+  font-size: var(--font-small);
+  cursor: pointer;
+}
+
+.Interests label:hover {
+  font-weight: bold;
+  border: 1px solid var(--primary-darkest-purple);
+  color: var(--primary-darkest-purple);
+  transition: 0.5s;
+}
+
+.Interests input:checked + label {
+  background-color: var(--contrast-green);
+  color: var(--neutral-black);
+  border: none;
+}
+
+/* onboarding */
+
+/* ONBOARDING CSS */
+section.onboarding {
+  display: none;
+  animation: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+/* button for next steps */
+button.onboarding-start {
+  background-color: white;
+  border: 2px solid #ab46a4;
+  border-radius: 25px 25px 25px 25px;
+  margin-top: 15vh;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+} 
+/* change button text in steps */
+ div.onboarding div:first-of-type ~ button.onboarding-start::before {
+  content: "Begin";
+}
+section.onboarding
+  div:nth-of-type(2).active
+  ~ button.onboarding-start::before {
+  content: "Volgende stap";
+}
+
+@media screen and (max-width: 600px) {
+ .Event {
+  max-width: 90%;
+ }
+}
+
+@media screen and (min-width: 600px) {
+  .Event {
+   max-width: 550px;
+  }
+ }

@@ -55,7 +55,15 @@ function Events() {
   return (
     <div className="Events">
       <h1>Events voor jou</h1>
-      <ul>
+      <ul className="Filters">
+        <li className="Filter">
+          <p className="FilterText">Filter 1</p>
+        </li>
+        <li className="Filter">
+          <p className="FilterText">Filter 2</p>
+        </li>
+      </ul>
+      <ul className="AllEvents">
         {matchingEvents.map((event) => {
           return (
             <li key={event.id} className="Event">

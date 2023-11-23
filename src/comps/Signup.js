@@ -4,12 +4,16 @@ import { useState } from "react";
 import { UserAuth } from "../context/AuthContext";
 import { collection, doc, setDoc } from "firebase/firestore";
 import { db } from "../firebase/config";
+import WelcomeSection from "./WelcomeSection";
+import SignupSection from "./SignupSection";
+import InterestSection from "./InterestSection";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [interests, setInterests] = useState([]);
+  const [onboardingStep, setOnboardingStep] = useState(1);
   const { createUser } = UserAuth();
   const navigate = useNavigate();
 
@@ -78,116 +82,45 @@ const Signup = () => {
     }
   };
 
+  const handleStartOnboarding = () => {
+    setOnboardingStep((prevStep) => prevStep + 1);
+  };
+
+  const handleNextClick = () => {
+    // Move to the next step
+    setOnboardingStep((prevStep) => prevStep + 1);
+  };
+
+  console.log(onboardingStep);
   return (
-    <div>
-      <div className="Signup">
-        <h1>Maak een account</h1>
-        <p>
-          Heb je al een account? <Link to="/login">Login</Link>
-        </p>
+    <div className="Signup">
+      {/* Render each section based on the onboarding step */}
+      {onboardingStep === 1 && (
+        <WelcomeSection onStartOnboarding={handleStartOnboarding} />
+      )}
 
-        <div className="form">
-          <form onSubmit={handleSubmit}>
-            <div className="Signup-form">
-              {/* <label htmlFor="username">Username</label> */}
-              <input type="text" placeholder="Username" />
+      {onboardingStep === 2 && (
+        <SignupSection
+          onSubmit={handleSubmit}
+          handleInterestChange={handleInterestChange}
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
+          error={error}
+          onNextClick={handleNextClick}
+        />
+      )}
 
-              {/* <label htmlFor="email">Email</label> */}
-              <input
-                onChange={(e) => setEmail(e.target.value)}
-                type="text"
-                placeholder="Email"
-              />
-
-              {/* <label htmlFor="password">Password</label> */}
-              <input
-                onChange={(e) => setPassword(e.target.value)}
-                type="password"
-                placeholder="Password"
-              />
-            </div>
-            <div className="Interests">
-              <input
-                type="checkbox"
-                id="Kunst"
-                name="interest"
-                value="Kunst"
-                onChange={(e) => handleInterestChange(e, "Kunst")}
-              />
-              <label htmlFor="Kunst">Kunst</label>
-
-              <input
-                type="checkbox"
-                id="Theater"
-                name="interest"
-                value="Theater"
-                onChange={(e) => handleInterestChange(e, "Theater")}
-              />
-              <label htmlFor="Theater">Theater</label>
-
-              <input
-                type="checkbox"
-                id="Muziek"
-                name="interest"
-                value="Muziek"
-                onChange={(e) => handleInterestChange(e, "Muziek")}
-              />
-              <label htmlFor="Muziek">Muziek</label>
-
-              <input
-                type="checkbox"
-                id="Film"
-                name="interest"
-                value="Film"
-                onChange={(e) => handleInterestChange(e, "Film")}
-              />
-              <label htmlFor="Film">Film</label>
-
-              <input
-                type="checkbox"
-                id="Design"
-                name="interest"
-                value="Design"
-                onChange={(e) => handleInterestChange(e, "Design")}
-              />
-              <label htmlFor="Film">Film</label>
-
-              <input
-                type="checkbox"
-                id="Games"
-                name="interest"
-                value="Games"
-                onChange={(e) => handleInterestChange(e, "Games")}
-              />
-              <label htmlFor="Games">Games</label>
-
-              <input
-                type="checkbox"
-                id="Reizen"
-                name="interest"
-                value="Reizen"
-                onChange={(e) => handleInterestChange(e, "Reizen")}
-              />
-              <label htmlFor="Reizen">Reizen</label>
-
-              <input
-                type="checkbox"
-                id="Sport"
-                name="interest"
-                value="Sport"
-                onChange={(e) => handleInterestChange(e, "Sport")}
-              />
-              <label htmlFor="Sport">Sport</label>
-            </div>
-
-            <button type="submit" className="Submit">
-              Sign up
-            </button>
-          </form>
-          {error && <p style={{ color: "red" }}>{error}</p>}
-        </div>
-      </div>
+      {onboardingStep === 3 && (
+        <InterestSection
+          handleInterestChange={handleInterestChange}
+          interests={interests}
+          onSubmit={handleSubmit}
+        />
+      )}
     </div>
   );
 };
+
 export default Signup;
