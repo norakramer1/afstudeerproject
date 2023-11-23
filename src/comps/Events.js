@@ -62,7 +62,9 @@ function Events() {
               <div className="EventCategories">
                 {event.interest &&
                   event.interest.map((interest, index) => (
-                    <p className="EventCategory">{interest}</p>
+                    <p key={index} className="EventCategory">
+                      {interest}
+                    </p>
                   ))}
               </div>
               <div className="EventImages">
@@ -91,7 +93,7 @@ function Events() {
                       alt="friends"
                       className="EventInfo-friendsImg"
                     />
-                    <p className="EventInfo-friend"> +20 vrienden gaan</p>
+                    <p className="EventInfo-friend"> +3 vrienden gaan</p>
                   </div>
                 </div>
                 {/* <p className="EventInfo-description">{event.description}</p> */}

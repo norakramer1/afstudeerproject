@@ -39,8 +39,8 @@ const Signup = () => {
         console.error("User object is not available.");
       }
     } catch (err) {
-      setError(err.message);
-      console.error(err.message);
+      setError(getErrorMessage(err.code));
+      console.log(err.code);
     }
   };
 
@@ -56,6 +56,25 @@ const Signup = () => {
       await setDoc(userInterestsDocRef, { interests });
     } catch (error) {
       console.error("Error adding user interests to Firestore: ", error);
+    }
+  };
+
+  const getErrorMessage = (errorCode) => {
+    switch (errorCode) {
+      case "auth/email-already-in-use":
+        return "Email is al in gebruik, probeer een ander emailadres.";
+      case "auth/invalid-email":
+        return "Email is ongeldig. Probeer een ander emailadres.";
+      case "auth/weak-password":
+        return "Wachtwoord moet minimaal 6 tekens bevatten.";
+      case "auth/missing-password":
+        return "Wachtwoord is niet ingevuld.";
+      case "auth/user-not-found":
+      case "auth/wrong-password":
+        return "Email of wachtwoord is onjuist.";
+      // Add more cases for other error codes as needed
+      default:
+        return "Er is iets onbekends misgegaan. Probeer het opnieuw.";
     }
   };
 
@@ -165,6 +184,7 @@ const Signup = () => {
               Sign up
             </button>
           </form>
+          {error && <p style={{ color: "red" }}>{error}</p>}
         </div>
       </div>
     </div>
