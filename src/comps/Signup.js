@@ -90,6 +90,10 @@ const Signup = () => {
     // Move to the next step
     setOnboardingStep((prevStep) => prevStep + 1);
   };
+  const handlePrevClick = () => {
+    // Move to the next step
+    setOnboardingStep((prevStep) => prevStep - 1);
+  };
 
   console.log(onboardingStep);
   return (
@@ -100,23 +104,26 @@ const Signup = () => {
       )}
 
       {onboardingStep === 2 && (
+        <InterestSection
+          handleInterestChange={handleInterestChange}
+          interests={interests}
+          onSubmit={handleSubmit}
+          onNextClick={handleNextClick}
+          onPrevClick={handlePrevClick}
+        />
+      )}
+
+      {onboardingStep === 3 && (
         <SignupSection
           onSubmit={handleSubmit}
           handleInterestChange={handleInterestChange}
           email={email}
           setEmail={setEmail}
           password={password}
-          setPassword={setPassword}
           error={error}
+          setPassword={setPassword}
           onNextClick={handleNextClick}
-        />
-      )}
-
-      {onboardingStep === 3 && (
-        <InterestSection
-          handleInterestChange={handleInterestChange}
-          interests={interests}
-          onSubmit={handleSubmit}
+          onPrevClick={handlePrevClick}
         />
       )}
     </div>

@@ -1,10 +1,21 @@
 // InterestSection
 import React from "react";
 
-const InterestSection = ({ handleInterestChange, interests, onSubmit }) => {
+const InterestSection = ({
+  handleInterestChange,
+  interests,
+  onSubmit,
+  onPrevClick,
+  onNextClick,
+}) => {
   return (
     <div className="Interests onboarding">
-      <div className="Interests onboarding">
+      <button onClick={onPrevClick} className="Onboarding-back">
+        Back
+      </button>
+      <h1>Interesses</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <form className="InterestsForm">
         <input
           type="checkbox"
           id="Kunst"
@@ -48,7 +59,7 @@ const InterestSection = ({ handleInterestChange, interests, onSubmit }) => {
           value="Design"
           onChange={(e) => handleInterestChange(e, "Design")}
         />
-        <label htmlFor="Film">Film</label>
+        <label htmlFor="Film">Design</label>
 
         <input
           type="checkbox"
@@ -76,9 +87,9 @@ const InterestSection = ({ handleInterestChange, interests, onSubmit }) => {
           onChange={(e) => handleInterestChange(e, "Sport")}
         />
         <label htmlFor="Sport">Sport</label>
-      </div>
-      <button onClick={onSubmit} type="button" className="Submit">
-        Submit
+      </form>
+      <button onClick={onNextClick} className="onboarding-start">
+        Next
       </button>
     </div>
   );

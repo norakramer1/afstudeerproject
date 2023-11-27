@@ -5,8 +5,8 @@ import React from "react";
 const WelcomeSection = ({ onStartOnboarding }) => {
   return (
     <div className="Intro onboarding">
-      <h1>Welkom</h1>
-      <p>Ontdek de wereld van kunst en cultuur.</p>
+      <h1>YourEventGuide</h1>
+      <p>Ontdek culturele evenementen die bij jou passen</p>
       <button className="onboarding-start" onClick={onStartOnboarding}>
         Start
       </button>

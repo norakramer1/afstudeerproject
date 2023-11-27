@@ -30,11 +30,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-font-family: 'inter', sans-serif;
+  font-family: 'inter', sans-serif;
 /* background-color: var(--primary-medium-blue); */
 }
 
-.Signup-title, .Login {
+.Signup-title, .Login, .Intro, .Interests {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,8 +42,12 @@ font-family: 'inter', sans-serif;
   margin-top: 30vh;
 }
 
-.Signup-title h1, .Login h1, .Signup-title p, .Login p {
+.Signup-title h1, .Login h1, .Signup-title p, .Login p, .Intro h1, .Intro p {
   text-align: center;
+}
+
+.Signup-title.onboarding h1 {
+  margin-top: 0;
 }
 
 h1 {
@@ -72,6 +76,15 @@ form {
   flex-direction: column;
  align-items: center;
  
+}
+
+.InterestsForm {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 50%;
+  margin-top: 25px;
 
 }
 
@@ -95,6 +108,17 @@ input[type='text']:focus, input[type='password']:focus {
   transition: 0.5s;
 }
 
+.Onboarding-back {
+color: var(--primary-medium-purple);
+  text-decoration: none;
+  font-size: var(--font-small);
+ /* margin: 10px 0; */
+ background-color: transparent;
+ border: none;
+  cursor: pointer;
+}
+
+
 .Submit {
   margin: 10px 0;
   background-color: var(--primary-medium-purple);
@@ -111,16 +135,6 @@ input[type='text']:focus, input[type='password']:focus {
 .Submit:hover {
   background-color: var(--primary-darkest-purple);
   transition: 0.5s;
-}
-.Interests {
-  /* display: none; */
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  max-width: 50%;
-  padding-top: 20px;
-
-  
 }
 
 .AllEvents {
@@ -228,6 +242,17 @@ margin: 5px 0 0 20px;
   margin-top: 4px;
 }
 
+.Onboarding-back:before {
+content: "";
+display: block;
+width: 32px;
+height: 46px;
+float: left;
+margin-top: -9px;
+transform: scale(0.4);
+}
+
+
 .EventInfo-date:before {
   background: url("icons/clock.svg") no-repeat;
 
@@ -235,6 +260,11 @@ margin: 5px 0 0 20px;
 
 .EventInfo-location:before {
   background: url("icons/location.svg") no-repeat;
+
+}
+
+.Onboarding-back:before {
+  background: url("icons/back-button.svg") no-repeat;
 
 }
 
@@ -318,11 +348,12 @@ section.onboarding {
 
 /* button for next steps */
 button.onboarding-start {
-  background-color: white;
-  border: 2px solid #ab46a4;
+  background-color: var(--primary-medium-purple);
+  border: none;
+  color: var(--neutral-white);
   border-radius: 25px 25px 25px 25px;
-  margin-top: 15vh;
-  padding: 5px 10px 5px 10px;
+  padding: 10px 30px;
+  margin-top: 15px;
   cursor: pointer;
 } 
 /* change button text in steps */

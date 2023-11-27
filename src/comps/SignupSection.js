@@ -9,22 +9,18 @@ const SignupSection = ({
   setEmail,
   password,
   setPassword,
+  onPrevClick,
   error,
-  onNextClick,
 }) => {
   return (
     <div className="Signup-title onboarding">
+      <button onClick={onPrevClick} className="Onboarding-back">
+        Back
+      </button>
       <h1>Maak een account</h1>
       <p>
         Heb je al een account? <Link to="/login">Login</Link>
       </p>
-
-      <button onClick={onNextClick} className="onboarding-start">
-        Next
-      </button>
-
-      <button className="onboarding-start">Start</button>
-
       <div className="form">
         <form onSubmit={onSubmit}>
           <div className="Signup-form">
@@ -42,9 +38,13 @@ const SignupSection = ({
               type="password"
               placeholder="Password"
             />
-            {error && <p style={{ color: "red" }}>{error}</p>}
           </div>
         </form>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+
+        <button onClick={onSubmit} type="button" className="Submit">
+          Submit
+        </button>
       </div>
     </div>
   );
