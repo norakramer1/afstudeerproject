@@ -19,9 +19,9 @@
   --neutral-white: #FDFFF4;
   --neutral-white-opacity: rgba(253, 255, 244, 0.8);
 
-  --font-large: calc(32px + 0.390625vw);
-  --font-medium: calc(18px + 0.390625vw);
-  --font-small: calc(16px + 0.390625vw);
+  --font-large: calc(30px + 0.390625vw);
+  --font-medium: calc(16px + 0.390625vw);
+  --font-small: calc(14px + 0.390625vw);
 
 
 }
@@ -34,26 +34,47 @@
 /* background-color: var(--primary-medium-blue); */
 }
 
-.Signup-title, .Login, .Intro, .Interests {
+.Signup, .Login, .Intro, .Interests {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30vh;
+ align-items: center;
+ justify-content: center;
+height: 100vh;
+
 }
 
-.Signup-title h1, .Login h1, .Signup-title p, .Login p, .Intro h1, .Intro p {
+.Intro-text {
+  max-width: 350px;
+}
+
+.Interests-title {
+  max-width: 40%;
+}
+
+.Signup-title {
+  text-align: start;
+}
+
+.Intro-text h1 {
+margin-left: 0;
+}
+
+/* .Signup-title h1, .Login h1, .Signup-title p, .Login p, .Intro h1, .Intro p {
   text-align: center;
-}
+} */
 
-.Signup-title.onboarding h1 {
-  margin-top: 0;
+.Signup-title h1 {
+  margin: 0;
 }
 
 h1 {
   font-size: var(--font-large);
   /* color: var(--neutral-white); */
   margin: 50px 25px 0;
+}
+
+.Interests h1 {
+  margin: 0;
 }
 
 p {
@@ -71,22 +92,22 @@ a:hover {
   transition: 0.5s;
 }
 
-form {
+/* form {
   display: flex;
   flex-direction: column;
  align-items: center;
  
-}
+} */
 
 .InterestsForm {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  max-width: 50%;
   margin-top: 25px;
 
 }
+
 
 input[type='text'], input[type='password'] {
   display: flex;
@@ -245,10 +266,10 @@ margin: 5px 0 0 20px;
 .Onboarding-back:before {
 content: "";
 display: block;
-width: 32px;
-height: 46px;
+width: 94px;
+height: 43px;
 float: left;
-margin-top: -9px;
+margin-left: -22px;
 transform: scale(0.4);
 }
 
@@ -264,7 +285,7 @@ transform: scale(0.4);
 }
 
 .Onboarding-back:before {
-  background: url("icons/back-button.svg") no-repeat;
+  background: url("icons/arrow-new.svg") no-repeat;
 
 }
 
@@ -357,23 +378,34 @@ button.onboarding-start {
   cursor: pointer;
 } 
 /* change button text in steps */
- div.onboarding div:first-of-type ~ button.onboarding-start::before {
+ /* div.onboarding div:first-of-type ~ button.onboarding-start::before {
   content: "Begin";
 }
 section.onboarding
   div:nth-of-type(2).active
   ~ button.onboarding-start::before {
   content: "Volgende stap";
-}
+} */
 
 @media screen and (max-width: 600px) {
  .Event {
   max-width: 90%;
  }
+
+ .Interests-title {
+  max-width: 90%;
+}
+
+
 }
 
 @media screen and (min-width: 600px) {
   .Event {
    max-width: 550px;
   }
+
+  .Interests-title {
+    max-width: 80%;
+  }
  }
+

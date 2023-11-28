@@ -13,9 +13,11 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [interests, setInterests] = useState([]);
-  const [onboardingStep, setOnboardingStep] = useState(1);
   const { createUser } = UserAuth();
   const navigate = useNavigate();
+
+  const [onboardingStep, setOnboardingStep] = useState(1);
+  // const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
 
   // Handle checkbox changes in react
   const handleInterestChange = (e, interest) => {
