@@ -41,7 +41,3 @@ The app will be running at http://localhost:3000.
 - react-router-dom
 - react-dom.
 - Firebase (Authentication, Firestore)
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
