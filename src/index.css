@@ -20,6 +20,9 @@
   --neutral-white: #FDFFF4;
   --neutral-white-opacity: rgba(253, 255, 244, 1);
 
+  --facebook-logo-color: #1877F2;
+  --instgram-logo-color: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+
   --font-large: calc(30px + 0.390625vw);
   --font-medium: calc(16px + 0.390625vw);
   --font-small: calc(14px + 0.390625vw);
@@ -100,6 +103,11 @@ a:hover {
  
 } */
 
+.Intro-text {
+  max-width: 60%;
+  text-align: center;
+}
+
 .InterestsForm {
   display: flex;
   flex-direction: row;
@@ -140,6 +148,61 @@ color: var(--primary-medium-purple);
   cursor: pointer;
 }
 
+.socialmedia-apps {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+.socialmedia-button {
+  margin: 10px;
+
+  border: none;
+  border-radius: 50px;
+  padding: 10px 10px;
+  color: var(--neutral-white);
+  font-weight: bold;
+  cursor: pointer;
+}
+.socialmedia-button.facebook {
+  background-color: var(--facebook-logo-color);
+}
+
+.socialmedia-button.instagram {
+  background: var(--instgram-logo-color);
+}
+
+.socialmedia-button.contacts {
+  background: var(--contrast-green);
+}
+
+
+.socialmedia-button.facebook:before {
+  content: "";
+  display: block;
+  float: left;
+  width: 50px;
+  height: 50px;
+  background: url("icons/facebook.svg") no-repeat;
+}
+
+.socialmedia-button.instagram:before {
+  content: "";
+  display: block;
+  float: left;
+  width: 50px;
+  height: 50px;
+  background: url("icons/instagram.svg") no-repeat;
+}
+
+.socialmedia-button.contacts:before {
+  content: "";
+  display: block;
+  float: left;
+  width: 50px;
+  height: 50px;
+  background: url("icons/phone.svg") no-repeat;
+}
 
 .Submit {
   margin: 10px 0;

@@ -14,7 +14,10 @@ const InterestSection = ({
         <button onClick={onPrevClick} className="Onboarding-back"></button>
         <h1>Interesses</h1>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>
+          Selecteer alle onderwerpen die jij interessant vind, om zou jou
+          persoonlijke feed te creeëren.
+        </p>
         <form className="InterestsForm">
           <input
             type="checkbox"
@@ -89,7 +92,7 @@ const InterestSection = ({
           <label htmlFor="Sport">Sport</label>
         </form>
         <button onClick={onNextClick} className="onboarding-start">
-          Next
+          Volgende stap
         </button>
       </div>
     </div>

@@ -37,12 +37,14 @@ const SignupSection = ({
                 type="password"
                 placeholder="Password"
               />
+
+              <input type="password" placeholder="Password check" />
             </div>
           </form>
           {error && <p style={{ color: "red" }}>{error}</p>}
 
           <button onClick={onSubmit} type="button" className="Submit">
-            Submit
+            Maak een account
           </button>
         </div>
       </div>
