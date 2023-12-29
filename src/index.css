@@ -74,7 +74,7 @@ margin-left: 0;
 h1 {
   font-size: var(--font-large);
   /* color: var(--neutral-white); */
-  margin: 50px 25px 0;
+  /* margin: 50px 25px 0; */
 }
 
 .Interests h1 {
@@ -95,13 +95,6 @@ a:hover {
   color: var(--primary-darkest-purple);
   transition: 0.5s;
 }
-
-/* form {
-  display: flex;
-  flex-direction: column;
- align-items: center;
- 
-} */
 
 .Intro-text {
   max-width: 60%;
@@ -142,7 +135,6 @@ input[type='text']:focus, input[type='password']:focus {
 color: var(--primary-medium-purple);
   text-decoration: none;
   font-size: var(--font-small);
- /* margin: 10px 0; */
  background-color: transparent;
  border: none;
   cursor: pointer;
@@ -154,15 +146,21 @@ color: var(--primary-medium-purple);
   align-items: center;
 
 }
+
+.socialmedia-app {
+list-style: none;
+
+}
 .socialmedia-button {
   margin: 10px;
-
   border: none;
   border-radius: 50px;
   padding: 10px 10px;
   color: var(--neutral-white);
-  font-weight: bold;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .socialmedia-button.facebook {
   background-color: var(--facebook-logo-color);
@@ -173,36 +171,43 @@ color: var(--primary-medium-purple);
 }
 
 .socialmedia-button.contacts {
-  background: var(--contrast-green);
+  background: var(--primary-darkest-blue);
 }
 
 
-.socialmedia-button.facebook:before {
+.socialmedia-button:before {
   content: "";
   display: block;
-  float: left;
-  width: 50px;
-  height: 50px;
+  width: 20px;
+  height: 20px;
+}
+
+.facebook:before {
   background: url("icons/facebook.svg") no-repeat;
 }
 
-.socialmedia-button.instagram:before {
-  content: "";
-  display: block;
-  float: left;
-  width: 50px;
-  height: 50px;
+.instagram:before {
   background: url("icons/instagram.svg") no-repeat;
 }
 
-.socialmedia-button.contacts:before {
-  content: "";
-  display: block;
-  float: left;
-  width: 50px;
-  height: 50px;
+.contacts:before {
   background: url("icons/phone.svg") no-repeat;
+  width: 17px;
+  height: 20px;
 }
+
+.friend {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px;
+}
+
+.friend-info {
+  display: flex;
+  flex-direction: column;
+}
+
 
 .Submit {
   margin: 10px 0;
@@ -386,9 +391,9 @@ transform: scale(0.4);
 }
 
 
-/* sign up checkbox styling */
+/* sign up checkbox styling AND modal checkbox styling */
 
-.Interests input {
+.Interests input, .friend input[type="checkbox"] {
   position: absolute;
   left: -100vw; /* don't hide the input but move it out of view instead for better accessibility   */
 }
@@ -412,10 +417,44 @@ transform: scale(0.4);
   transition: 0.5s;
 }
 
-.Interests input:checked + label {
+.Interests input:checked + label, .friend input:checked + label {
   background-color: var(--contrast-green);
   color: var(--neutral-black);
   border: none;
+}
+
+.friend-info label::before {
+  content: '+ Toevoegen';
+
+}
+
+/* Style label when checkbox is unchecked */
+.friend-info input:checked + label::before {
+  content: '- Verwijderen';
+}
+
+
+
+
+.friend label {
+  background-color: transparent;
+  border: 1px solid var(--primary-medium-purple);
+  color: var(--primary-medium-purple);
+  text-decoration: none;
+  border-radius: 25px;
+  padding: 5px 15px;
+  margin: 0 5px 5px 5px; 
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.friend label:hover {
+  background-color: var(--primary-medium-purple);
+  border: 1px solid var(--primary-medium-purple);
+  color: white;
+  transition: 0.5s;
+
 }
 
 /* onboarding */
