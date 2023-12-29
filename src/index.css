@@ -96,6 +96,12 @@ a:hover {
   transition: 0.5s;
 }
 
+
+div.onboarding {
+transition: 5s;
+
+}
+
 .Intro-text {
   max-width: 60%;
   text-align: center;
@@ -331,8 +337,12 @@ margin: 5px 0 0 20px;
   float: left;
   margin-top: 4px;
 }
+.Modal-back {
+  background-color: transparent;
+  border: none;
+}
 
-.Onboarding-back:before {
+.Onboarding-back:before, .Modal-back:before, .EventInfo-date:before, .EventInfo-location:before {
 content: "";
 display: block;
 width: 94px;
@@ -353,7 +363,7 @@ transform: scale(0.4);
 
 }
 
-.Onboarding-back:before {
+.Onboarding-back:before, .Modal-back:before {
   background: url("icons/arrow-new.svg") no-repeat;
 
 }
@@ -417,24 +427,34 @@ transform: scale(0.4);
   transition: 0.5s;
 }
 
-.Interests input:checked + label, .friend input:checked + label {
+.Interests input:checked + label {
   background-color: var(--contrast-green);
   color: var(--neutral-black);
   border: none;
 }
 
-.friend-info label::before {
-  content: '+ Toevoegen';
 
+
+.friends {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.friend {
+  margin: 20px 10px;
 }
 
 /* Style label when checkbox is unchecked */
-.friend-info input:checked + label::before {
-  content: '- Verwijderen';
+.friend-info input[type="checkbox"] + label::before {
+  content: '+ Toevoegen';
 }
 
-
-
+/* Style label when checkbox is checked */
+.friend-info input[type="checkbox"]:checked + label::before {
+  content: '- Verwijderen';
+}
 
 .friend label {
   background-color: transparent;
@@ -449,7 +469,7 @@ transform: scale(0.4);
   transition: 0.5s;
 }
 
-.friend label:hover {
+.friend-info input[type="checkbox"]:checked + label {
   background-color: var(--primary-medium-purple);
   border: 1px solid var(--primary-medium-purple);
   color: white;
@@ -457,6 +477,9 @@ transform: scale(0.4);
 
 }
 
+.friend-name {
+  padding: 0 0 5px 10px;
+}
 /* onboarding */
 
 /* ONBOARDING CSS */
@@ -511,4 +534,3 @@ section.onboarding
     max-width: 80%;
   }
  }
-

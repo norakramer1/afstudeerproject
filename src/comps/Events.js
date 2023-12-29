@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { db } from "../firebase/config";
 import { collection, getDocs, getDoc, doc } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
@@ -67,45 +68,48 @@ function Events() {
         {matchingEvents.map((event) => {
           return (
             <li key={event.id} className="Event">
-              <div className="EventCategories">
-                {event.interest &&
-                  event.interest.map((interest, index) => (
-                    <p key={index} className="EventCategory">
-                      {interest}
-                    </p>
-                  ))}
-              </div>
-              <div className="EventImages">
-                {event.eventTitleImage &&
-                  event.eventTitleImage.map((eventTitleImage, index) => (
-                    <img
-                      key={index}
-                      src={eventTitleImage}
-                      alt={event.title}
-                      className="EventImage"
-                    />
-                  ))}
-              </div>
-              <div className="EventInfo">
-                <h2 className="EventInfo-title">{event.title}</h2>
-                <p className="EventInfo-date">{event.date}</p>
-                <p className="EventInfo-location">{event.location}</p>
-
-                <div className="EventInfo-links">
-                  <a href="https://www.google.com" className="EventInfo-link">
-                    Kaarten
-                  </a>
-                  <div className="EventInfo-friends">
-                    <img
-                      src="https://firebasestorage.googleapis.com/v0/b/cmd-culture-app.appspot.com/o/friends.svg?alt=media&token=11f63f3a-cc68-447e-ad90-7fe5b52ea97d"
-                      alt="friends"
-                      className="EventInfo-friendsImg"
-                    />
-                    <p className="EventInfo-friend"> +3 vrienden gaan</p>
-                  </div>
+              <Link to={`/events/${event.id}`}>
+                <div className="EventCategories">
+                  {event.interest &&
+                    event.interest.map((interest, index) => (
+                      <p key={index} className="EventCategory">
+                        {interest}
+                      </p>
+                    ))}
                 </div>
-                {/* <p className="EventInfo-description">{event.description}</p> */}
-              </div>
+                <div className="EventImages">
+                  {event.eventTitleImage &&
+                    event.eventTitleImage.map((eventTitleImage, index) => (
+                      <img
+                        key={index}
+                        src={eventTitleImage}
+                        alt={event.title}
+                        className="EventImage"
+                        loading="lazy"
+                      />
+                    ))}
+                </div>
+                <div className="EventInfo">
+                  <h2 className="EventInfo-title">{event.title}</h2>
+                  <p className="EventInfo-date">{event.date}</p>
+                  <p className="EventInfo-location">{event.location}</p>
+
+                  <div className="EventInfo-links">
+                    <a href="https://www.google.com" className="EventInfo-link">
+                      Kaarten
+                    </a>
+                    <div className="EventInfo-friends">
+                      <img
+                        src="https://firebasestorage.googleapis.com/v0/b/cmd-culture-app.appspot.com/o/friends.svg?alt=media&token=11f63f3a-cc68-447e-ad90-7fe5b52ea97d"
+                        alt="friends"
+                        className="EventInfo-friendsImg"
+                      />
+                      <p className="EventInfo-friend"> +3 vrienden gaan</p>
+                    </div>
+                  </div>
+                  {/* <p className="EventInfo-description">{event.description}</p> */}
+                </div>
+              </Link>
             </li>
           );
         })}

@@ -14,7 +14,7 @@ const AddFriendsSection = ({ onPrevClick, onNextClick }) => {
   };
 
   return (
-    <div className="add-friends">
+    <div className="Add-friends onboarding">
       <button onClick={onPrevClick} className="Onboarding-back"></button>
       <h1>Voeg je vrienden toe</h1>
       <p>Importeer een lijst met jou vrienden vanuit deze apps.</p>

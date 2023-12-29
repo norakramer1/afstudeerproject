@@ -8,7 +8,6 @@ import WelcomeSection from "./WelcomeSection";
 import SignupSection from "./SignupSection";
 import InterestSection from "./InterestSection";
 import AddFriendsSection from "./AddFriendsSection";
-import PickFriendsSection from "./PickFriendsSection";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -127,15 +126,6 @@ const Signup = () => {
       )}
 
       {onboardingStep === 4 && (
-        <PickFriendsSection
-          onSubmit={handleSubmit}
-          handleInterestChange={handleInterestChange}
-          onNextClick={handleNextClick}
-          onPrevClick={handlePrevClick}
-        />
-      )}
-
-      {onboardingStep === 5 && (
         <SignupSection
           onSubmit={handleSubmit}
           email={email}
