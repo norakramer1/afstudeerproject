@@ -316,6 +316,7 @@ margin: 5px 0 0 20px;
 }
 
 .EventCategories {
+  width: 100%;
   top: 40px;
 }
 .EventCategory, .Filter {
