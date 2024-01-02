@@ -661,6 +661,14 @@ margin: 20px 0 40px 10%;
   padding-right: 20px;
 }
 
+
+/* REVIEW */
+
+.Review-header {
+  background-color: var(--contrast-green);
+  padding: 30px;
+}
+
 @media screen and (max-width: 600px) {
  .Event {
   max-width: 90%;

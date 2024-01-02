@@ -5,6 +5,8 @@ import Login from "./comps/Login";
 import Signup from "./comps/Signup";
 import Account from "./comps/Account";
 import EventDetail from "./comps/EventDetail"; // Import the new component
+import ReviewEvents from "./comps/ReviewEvents";
+import Review from "./comps/Review";
 import { AuthContextProvider } from "./context/AuthContext";
 import ProtectedRoute from "./comps/ProtectedRoute";
 import friend1 from "./icons/friends/friend1.png";
@@ -80,10 +82,28 @@ function App() {
           <Route
             path="/events/:eventId"
             element={
-              <EventDetail
-                friendNames={friendNames}
-                friendImages={friendImages}
-              />
+              <ProtectedRoute>
+                <EventDetail
+                  friendNames={friendNames}
+                  friendImages={friendImages}
+                />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/events"
+            element={
+              <ProtectedRoute>
+                <ReviewEvents />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/review"
+            element={
+              <ProtectedRoute>
+                <Review />
+              </ProtectedRoute>
             }
           />
         </Routes>

@@ -1,6 +1,6 @@
 // EventDetail.js
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { db } from "../firebase/config";
 import { doc, getDoc } from "firebase/firestore";
 import mapImg from "../icons/map.png";
@@ -100,7 +100,11 @@ function EventDetail({ friendNames, friendImages }) {
           <p className="SingleEvent-date">{eventDetails.date}</p>
           <p className="SingleEvent-location">{eventDetails.location}</p>
           <p className="SingleEvent-organizer">{eventDetails.organizer}</p>
-          <button className="onboarding-start">Ik ga naar dit evenement</button>
+          <Link to="/events" className="Nav-account-link">
+            <button className="onboarding-start">
+              Ik ga naar dit evenement
+            </button>
+          </Link>
         </div>
       </div>
       <h2 className="SingleEvent-subtitle">Dit vonden jou vrienden er van</h2>
