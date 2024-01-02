@@ -24,7 +24,6 @@ function Events() {
       "NRC: 'Een van de beste voorstellingen van het jaar'",
       "CJP: '★★★★★",
       "Theatervereniging Nederland: 'Geweldig!'",
-      "NOS: 'Fantastisch!'",
       "Op basis van jou interesses",
       "Op basis van jou interesses",
       "Op basis van jou interesses",

@@ -272,6 +272,7 @@ list-style: none;
 }
 
 .AllEvents {
+  margin: auto 5%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -279,7 +280,7 @@ list-style: none;
 }
 
 .Events-title {
-  margin: 0 0 20px 20px;
+  margin: 0 0 0 6%;
 }
 .Event {
   display: flex;
@@ -352,24 +353,26 @@ margin: 5px 0 0 20px;
 }
 
 .EventDetails {
+  width: 90%;
+    position: absolute;
+  top: 50%;
+
+  
+}
+.EventReviews, .EventInfo {
   background-color: var(--neutral-white-opacity);
   color: var(--neutral-black);
-    position: absolute;
   background-color: var(--neutral-white-opacity);
   border-radius: 10px;
   padding: 20px;
-  top: 60%;
-  width: 90%;
-  
+  /* width: 90%; */
 }
 
 .EventReviews {
-  /* position: absolute;
-  background-color: var(--neutral-white-opacity);
-  border-radius: 10px;
-  padding: 20px;
-  bottom: 180px; */
+  margin-bottom: 5px;
+  border-radius: 50px;
 }
+
 
 .EventInfo-date {
   font-size: var(--font-small);
@@ -642,7 +645,8 @@ margin: 20px 0 40px 10%;
   align-items: center;
   padding-bottom: 15px;
 }
-.SingleEvent-review-name {
+
+.SingleEvent-review-name, .EventReview {
 
   font-size: var(--font-small);
   font-style: italic;
@@ -701,7 +705,7 @@ margin: 20px 0 40px 10%;
 
 @media screen and (min-width: 600px) {
   .Event {
-   max-width: 550px;
+   max-width: 500px;
   }
 
   .Interests-title {
