@@ -10,6 +10,7 @@ function Review() {
         <input type="text" placeholder="Naam" required />
         <textarea
           id="review"
+          placeholder="Schrijf hier je review"
           className="Review-text"
           name="review"
           rows="4"
