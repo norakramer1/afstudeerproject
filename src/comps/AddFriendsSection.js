@@ -1,23 +1,41 @@
 import React from "react";
 import SocialMediaModal from "./Modal";
+import ContactsModal from "./ContactsModal";
 import { useState } from "react";
 
 const AddFriendsSection = ({ onPrevClick, onNextClick }) => {
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalType, setModalType] = useState(null);
 
   const openModal = (socialMedia) => {
-    setModalOpen(true);
+    setModalType(socialMedia);
   };
 
   const closeModal = () => {
-    setModalOpen(false);
+    setModalType(null);
+  };
+
+  const renderModal = () => {
+    switch (modalType) {
+      case "Facebook":
+      case "Instagram":
+        return (
+          <SocialMediaModal isOpen={!!modalType} closeModal={closeModal} />
+        );
+      case "Contacts":
+        return <ContactsModal isOpen={!!modalType} closeModal={closeModal} />;
+      default:
+        return null;
+    }
   };
 
   return (
     <div className="Add-friends onboarding">
       <button onClick={onPrevClick} className="Onboarding-back"></button>
       <h1>Voeg je vrienden toe</h1>
-      <p>Importeer een lijst met jou vrienden vanuit deze apps.</p>
+      <p>
+        Importeer een lijst met jou vrienden vanuit deze apps, of nodig jou
+        vrienden uit.
+      </p>
       <ul className="socialmedia-apps">
         <li className="socialmedia-app">
           <button
@@ -44,8 +62,10 @@ const AddFriendsSection = ({ onPrevClick, onNextClick }) => {
         </li>
       </ul>
 
+      {renderModal()}
+
       {/* Single Modal */}
-      <SocialMediaModal isOpen={modalOpen} closeModal={closeModal} />
+      {/* <SocialMediaModal isOpen={modalOpen} closeModal={closeModal} /> */}
       <button onClick={onNextClick} className="onboarding-start">
         Volgende stap
       </button>

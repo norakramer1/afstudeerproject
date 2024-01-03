@@ -397,6 +397,12 @@ margin: 5px 0 0 20px;
   border: none;
 }
 
+.Modal-textarea {
+  height: 150px;
+  padding: 10px;
+  width: 50%;
+}
+
 .Onboarding-back:before, .Modal-back:before {
   /* .EventInfo-date:before, .EventInfo-location:before */
 content: "";
@@ -496,12 +502,13 @@ transform: scale(0.4);
   margin: 0 5px 5px 5px; 
   font-size: var(--font-small);
   cursor: pointer;
+  transition: 0.5s;
 }
 
 .Interests label:hover {
-  font-weight: bold;
-  border: 1px solid var(--primary-darkest-purple);
-  color: var(--primary-darkest-purple);
+  background-color: var(--primary-medium-purple);
+  border: 1px solid var(--primary-medium-purple);
+  color: var(--neutral-white);
   transition: 0.5s;
 }
 
@@ -588,6 +595,15 @@ button.onboarding-start:hover {
   transition: 0.5s;
 }
 
+button.onboarding-start.copy {
+  margin-right: 15px;
+}
+
+button.onboarding-start.copy:focus {
+ background-color: var(--contrast-green);
+  color: var(--neutral-black);
+  transition: 0.5s;
+}
 
 /* detailpage */
 .SingleEvent-details {
