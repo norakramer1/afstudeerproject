@@ -43,7 +43,7 @@ a {
   text-decoration: none;
 }
 
-.Signup, .Login, .Intro, .Interests {
+.Signup, .Login, .Intro, .Interests, .Review {
   display: flex;
   flex-direction: column;
  align-items: center;
@@ -118,7 +118,7 @@ transition: 5s;
 }
 
 
-input[type='text'], input[type='password'] {
+input[type='text'], input[type='password'], textarea {
   display: flex;
   flex-direction: column;
   margin: 10px 0;
@@ -132,7 +132,12 @@ input[type='text'], input[type='password'] {
   
 }
 
-input[type='text']:focus, input[type='password']:focus {
+
+.Review-text {
+  height: 200px;
+}
+
+input[type='text']:focus, input[type='password']:focus, textarea:focus {
   outline: none;
   border: 2px solid var(--contrast-green);
   transition: 0.5s;
@@ -667,7 +672,11 @@ margin: 20px 0 40px 10%;
 .Review-header {
   background-color: var(--contrast-green);
   padding: 30px;
+  margin: 5%;
+  border-radius: 10px;
 }
+
+
 
 @media screen and (max-width: 600px) {
  .Event {

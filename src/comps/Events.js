@@ -22,7 +22,7 @@ function Events() {
       "Olivia is naar dit evenement geweest",
       "Ava is naar dit evenement geweest",
       "NRC: 'Een van de beste voorstellingen van het jaar'",
-      "CJP: '★★★★★",
+      "CJP: '★★★★★'",
       "Theatervereniging Nederland: 'Geweldig!'",
       "Op basis van jou interesses",
       "Op basis van jou interesses",
@@ -74,12 +74,12 @@ function Events() {
       }
     });
 
-    // Unsubscribe when the component is unmounted
+    // Unsubscribe
     return () => {
       console.log("unsubscribed");
       unsubscribe();
     };
-  }, []); // Empty dependency array ensures this effect runs once after the initial render
+  }, []);
 
   return (
     <div className="Events">

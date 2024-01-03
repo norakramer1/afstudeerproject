@@ -3,14 +3,23 @@ import { Link } from "react-router-dom";
 
 function Review() {
   return (
-    <div>
-      <h1>Review</h1>
+    <div className="Review">
+      <h1>Review dit evenement</h1>
 
       <form>
-        <label htmlFor="review">Review</label>
-        <textarea id="review" name="review" rows="4" cols="50"></textarea>
-        <Link to="/events" className="Nav-account-link">
-          <button type="submit">Verstuur review</button>
+        <input type="text" placeholder="Naam" required />
+        <textarea
+          id="review"
+          className="Review-text"
+          name="review"
+          rows="4"
+          cols="150"
+          required
+        ></textarea>
+        <Link to="/" className="Nav-account-link">
+          <button className="onboarding-start" type="submit">
+            Verstuur review
+          </button>
         </Link>
       </form>
     </div>

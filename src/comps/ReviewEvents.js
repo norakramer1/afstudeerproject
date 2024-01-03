@@ -17,6 +17,9 @@ function Events() {
   const DummyReviews = () => {
     const dummyReviews = [
       "Mia is naar dit evenement geweest",
+      "Olivier is naar dit evenement geweest",
+      "Felix is naar dit evenement geweest",
+      "Robin is naar dit evenement geweest",
       "Noah is naar dit evenement geweest",
       "Emma is naar dit evenement geweest",
       "Olivia is naar dit evenement geweest",
