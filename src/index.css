@@ -693,13 +693,18 @@ margin: 20px 0 40px 10%;
 }
 
 
+div.ReactModal__Content.ReactModal__Content--after-open {
+  border: 1px solid var(--primary-medium-purple) !important;
+}
+
+
 
 @media screen and (max-width: 600px) {
  .Event {
   max-width: 90%;
  }
 
- .Interests-title {
+ .Interests-title, .Add-friends {
   max-width: 90%;
 }
 
@@ -722,6 +727,10 @@ margin: 20px 0 40px 10%;
   margin: 20px 0 40px 20px;
 }
 
+.Modal-textarea {
+  height: 150px;
+  width: 90%;
+}
 
 }
 
@@ -741,7 +750,7 @@ margin: 20px 0 40px 10%;
    max-width: 500px;
   }
 
-  .Interests-title {
+  .Interests-title, .Add-friends {
     max-width: 80%;
   }
  }
