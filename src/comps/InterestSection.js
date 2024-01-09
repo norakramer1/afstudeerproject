@@ -23,7 +23,7 @@ const InterestSection = ({
             type="checkbox"
             id="Kunst"
             name="interest"
-            value="Kunst"
+            value="Musea"
             onChange={(e) => handleInterestChange(e, "Kunst")}
           />
           <label htmlFor="Kunst">Kunst</label>

@@ -20,6 +20,17 @@
   --neutral-white: #f9f9f9;
   --neutral-white-opacity: rgb(255, 255, 255);
 
+  --category-red: #e74c3c;
+  --category-orange: #e67e22;
+  --category-yellow: #f1c40f;
+  --category-green: #2ecc71;
+  --category-petrol: #1abc9c;
+  --category-blue: #3498db;
+  --category-purple: #cf9ce3;
+  --category-pink: #ea3b75; 
+  --category-gray: #404040; 
+  
+
   --facebook-logo-color: #1877F2;
   --instgram-logo-color: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
 
@@ -38,6 +49,42 @@
   box-sizing: border-box;
   font-family: 'inter', sans-serif;
 /* background-color: var(--primary-medium-blue); */
+}
+
+.Muziek {
+  background-color: var(--category-red);
+}
+
+.Kunst {
+  background-color: var(--category-orange);
+}
+
+.Sport {
+  background-color: var(--category-yellow);
+}
+
+.Design {
+  background-color: var(--category-green);
+}
+
+.Theater {
+  background-color: var(--category-petrol);
+}
+
+.Gaming{
+  background-color: var(--category-blue);
+}
+
+.Reizen {
+  background-color: var(--category-purple);
+}
+
+.Film {
+  background-color: var(--category-pink);
+}
+
+.Sport {
+  background-color: var(--category-gray);
 }
 
 a {
@@ -337,9 +384,9 @@ margin: 5px 0 0 20px;
   margin: 0 5px;
 }
 
-.EventCategory {
+/* .EventCategory {
   background-color: var(--primary-medium-purple);
-}
+} */
 
 .Filter {
   background-color: var(--contrast-green);

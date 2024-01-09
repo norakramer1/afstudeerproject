@@ -59,7 +59,7 @@ function App() {
             path="/"
             element={
               <ProtectedRoute>
-                <Events />
+                <Events friendNames={friendNames} friendImages={friendImages} />
               </ProtectedRoute>
             }
           />
@@ -78,7 +78,6 @@ function App() {
               </ProtectedRoute>
             }
           />
-          {/* Add a new route for individual event detail page */}
           <Route
             path="/events/:eventId"
             element={
@@ -94,7 +93,10 @@ function App() {
             path="/events"
             element={
               <ProtectedRoute>
-                <ReviewEvents />
+                <ReviewEvents
+                  friendNames={friendNames}
+                  friendImages={friendImages}
+                />
               </ProtectedRoute>
             }
           />
