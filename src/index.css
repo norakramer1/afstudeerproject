@@ -27,6 +27,7 @@
   --font-large: calc(30px + 0.390625vw);
   --font-medium: calc(16px + 0.390625vw);
   --font-small: calc(14px + 0.390625vw);
+  --font-xsmall: calc(12px + 0.390625vw);
 
 
 }
@@ -293,7 +294,7 @@ list-style: none;
 align-items: center;
   position: relative;
   margin: 10px 20px 25px;
-  height: 550px;
+  height: 430px;
   list-style-type: none;
 }
 
@@ -351,8 +352,7 @@ margin: 5px 0 0 20px;
 }
 
 .EventImage {
-   width: 100vw;
-  /* height: 90vh; */
+   width: 100%;
   object-fit: cover;
   
 }
@@ -369,13 +369,21 @@ margin: 5px 0 0 20px;
   color: var(--neutral-black);
   background-color: var(--neutral-white-opacity);
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px 10px 10px 20px;
   /* width: 90%; */
 }
 
 .EventReviews {
   margin-bottom: 5px;
   border-radius: 50px;
+}
+
+.EventReview, .EventInfo-title, .EventInfo-date, .EventInfo-location {
+  display: inline-block;
+  width: 350px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 
@@ -669,7 +677,7 @@ margin: 20px 0 40px 10%;
 
 .SingleEvent-review-name, .EventReview {
 
-  font-size: var(--font-small);
+  font-size: var(--font-xsmall);
   font-style: italic;
   color:#636363;
 }
@@ -747,7 +755,7 @@ div.ReactModal__Content.ReactModal__Content--after-open {
 
 @media screen and (min-width: 600px) {
   .Event {
-   max-width: 500px;
+   width: 450px;
   }
 
   .Interests-title, .Add-friends {

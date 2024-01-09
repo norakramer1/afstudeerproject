@@ -15,7 +15,7 @@ const InterestSection = ({
         <h1>Interesses</h1>
 
         <p>
-          Selecteer alle onderwerpen die jij interessant vind, om zou jou
+          Selecteer alle onderwerpen die jij interessant vind, om zo jou
           persoonlijke feed te creeëren.
         </p>
         <form className="InterestsForm">

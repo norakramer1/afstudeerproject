@@ -16,13 +16,13 @@ function Events() {
   // Function to generate random dummy text
   const DummyReviews = () => {
     const dummyReviews = [
-      "Mia is naar dit evenement geweest",
+      "Mia is naar dit evenement geweest en vond het geweldig",
       "Noah is naar dit evenement geweest",
       "Emma is naar dit evenement geweest",
       "Olivia is naar dit evenement geweest",
       "Ava is naar dit evenement geweest",
       "NRC: 'Een van de beste voorstellingen van het jaar'",
-      "CJP: '★★★★★'",
+      "CJP: 'Een aanrader!'",
       "Theatervereniging Nederland: 'Geweldig!'",
       "Op basis van jou interesses",
       "Op basis van jou interesses",
