@@ -4,7 +4,7 @@ import { db } from "../firebase/config";
 import { collection, getDocs, getDoc, doc } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import logo from "../icons/event-guide-logo.svg";
-// import avatar from "../icons/friends/friend1.png";
+import avatar from "../icons/friends/friend1.png";
 
 function Events({ friendImages }) {
   //const matchingEvents = [];
@@ -108,7 +108,7 @@ function Events({ friendImages }) {
         <img src={logo} alt="logo" className="Nav-logo" />
         <Link to="/account" className="Nav-account-link">
           <button className="Nav-button">Account</button>
-          {/* <img src={avatar} alt="" className="Nav-avatar" /> */}
+          <img src={avatar} alt="" className="Nav-avatar" />
         </Link>
       </nav>
       <h1 className="Events-title">Events</h1>
