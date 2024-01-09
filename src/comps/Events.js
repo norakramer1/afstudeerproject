@@ -45,13 +45,13 @@ function Events({ friendImages }) {
 
     if (review.includes("is naar dit evenement geweest en vond het geweldig")) {
       // Show friendImage1.png to friendImage5.png
-      friendImage = friendImages[Math.floor(Math.random() * 5)];
+      friendImage = friendImages[Math.floor(Math.random() * 9)];
     } else if (review.includes("Op basis van jouw interesses")) {
       // Show friendImage1.png
-      friendImage = friendImages[0];
+      friendImage = friendImages[13];
     } else if (review.includes(":")) {
       // Show friendImage8.png
-      friendImage = friendImages[7];
+      friendImage = friendImages[12];
     } else {
       // For other cases, use a random friend image
       friendImage = randomFriendImage;

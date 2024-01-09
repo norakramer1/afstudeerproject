@@ -421,8 +421,17 @@ margin: 5px 0 0 20px;
 }
 
 .EventReviews {
+  padding: 10px;
+  display: flex;
+  align-items: center;
   margin-bottom: 5px;
   border-radius: 50px;
+}
+
+.FriendImage {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
 }
 
 .EventReview, .EventInfo-title, .EventInfo-date, .EventInfo-location {

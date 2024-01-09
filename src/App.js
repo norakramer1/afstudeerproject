@@ -21,6 +21,8 @@ import friend9 from "./icons/friends/friend9.png";
 import friend10 from "./icons/friends/friend10.png";
 import friend11 from "./icons/friends/friend11.png";
 import friend12 from "./icons/friends/friend12.png";
+import friend13 from "./icons/friends/friend13.png";
+import friend14 from "./icons/friends/friend14.png";
 
 function App() {
   const friendNames = [
@@ -50,6 +52,8 @@ function App() {
     friend10,
     friend11,
     friend12,
+    friend13,
+    friend14,
   ];
   return (
     <div className="App">
