@@ -113,7 +113,7 @@ function Events() {
               <div className="EventCategories">
                 {event.interest &&
                   event.interest.map((interest, index) => (
-                    <p key={index} className="EventCategory">
+                    <p key={index} className={`EventCategory ${interest}`}>
                       {interest}
                     </p>
                   ))}
