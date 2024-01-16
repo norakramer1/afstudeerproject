@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'inter';
   src: url(../public/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf);
+
 }
 
 :root {
@@ -91,7 +92,7 @@ a {
   text-decoration: none;
 }
 
-.Signup, .Login, .Intro, .Interests, .Review {
+.Signup, .Login, .Intro, .Interests, .Review, .Account {
   display: flex;
   flex-direction: column;
  align-items: center;
@@ -131,6 +132,7 @@ h1 {
   margin: 0;
 }
 
+
 p {
   font-size: var(--font-small);
 }
@@ -145,11 +147,6 @@ a:hover {
   transition: 0.5s;
 }
 
-
-div.onboarding {
-transition: 5s;
-
-}
 
 .Intro-text {
   max-width: 60%;
@@ -181,8 +178,13 @@ input[type='text'], input[type='password'], textarea {
 }
 
 
+
 .Review-text {
   height: 200px;
+}
+
+.Review textarea::placeholder {
+  padding-top: 10px;
 }
 
 input[type='text']:focus, input[type='password']:focus, textarea:focus {
@@ -190,6 +192,8 @@ input[type='text']:focus, input[type='password']:focus, textarea:focus {
   border: 2px solid var(--contrast-green);
   transition: 0.5s;
 }
+
+
 
 .Onboarding-back {
 color: var(--primary-medium-purple);
@@ -284,6 +288,12 @@ list-style: none;
 
 .Submit:hover {
   background-color: var(--primary-darkest-purple);
+  transition: 0.5s;
+}
+
+.Submit:focus, .Onboarding-start:focus {
+  background-color: var(--primary-medium-purple);
+  border: 2px solid var(--primary-darkest-blue);
   transition: 0.5s;
 }
 
@@ -406,7 +416,7 @@ margin: 5px 0 0 20px;
 
 .EventDetails {
   width: 90%;
-    position: absolute;
+  position: absolute;
   top: 50%;
 
   
@@ -416,12 +426,12 @@ margin: 5px 0 0 20px;
   color: var(--neutral-black);
   background-color: var(--neutral-white-opacity);
   border-radius: 10px;
-  padding: 10px 10px 10px 20px;
+  padding: 10px 10px 20px 20px;
   /* width: 90%; */
 }
 
 .EventReviews {
-  padding: 10px;
+  padding: 7px;
   display: flex;
   align-items: center;
   margin-bottom: 5px;
@@ -429,8 +439,8 @@ margin: 5px 0 0 20px;
 }
 
 .FriendImage {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   margin-right: 10px;
 }
 
@@ -468,7 +478,6 @@ margin: 5px 0 0 20px;
 }
 
 .Onboarding-back:before, .Modal-back:before {
-  /* .EventInfo-date:before, .EventInfo-location:before */
 content: "";
 display: block;
 width: 94px;
@@ -499,6 +508,37 @@ transform: scale(0.4);
   background: url("icons/clipboard.svg") no-repeat;
 }
 
+.Review-subtitle {
+  padding-top: 10px;
+  font-size: var(--font-small);
+  color: var(--neutral-black);
+}
+
+.Review-stars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.star-label::before {
+  content: "";
+display: block;
+width: 50px;
+height: 50px;
+  background: url('icons/star.png');
+  background-repeat: no-repeat;
+  transition: 0.5s;
+}
+
+.star-checkbox input:checked + .star-label:before {
+  background: url('icons/star-fill.png'); /* Replace with your filled star image */
+  background-repeat: no-repeat;
+  color: transparent;
+  width: 50px;
+height: 50px;
+}
+
 .EventInfo {
   display: flex;
   flex-direction: column;
@@ -526,24 +566,24 @@ transform: scale(0.4);
 }
 
 
-.EventInfo-links {
+.EventInfo-links a {
  background-color: var(--primary-medium-purple);
   color: var(--neutral-white);
   text-decoration: none;
   border-radius: 25px;
   /* height: 30px; */
-  padding: 10px 25px;
+  padding: 5px 15px;
   font-size: var(--font-small);
   font-weight: bold;
   cursor: pointer;
+  transition: 0.5s;
 }
 
-.EventInfo-links a {
-  color: var(--neutral-white);
-  text-decoration: none;
+.EventInfo-links a:first-of-type {
+  margin-right: 10px;
 }
 
-.EventInfo-links:hover {
+.EventInfo-links a:hover {
   background-color: var(--primary-darkest-purple);
   transition: 0.5s;
 }
@@ -551,7 +591,7 @@ transform: scale(0.4);
 
 /* sign up checkbox styling AND modal checkbox styling */
 
-.Interests input, .friend input[type="checkbox"] {
+.Interests input, .friend input[type="checkbox"], .star-checkbox input[type="checkbox"] {
   position: absolute;
   left: -100vw; /* don't hide the input but move it out of view instead for better accessibility   */
 }

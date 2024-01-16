@@ -156,7 +156,11 @@ function Events({ friendImages }) {
 
                     <div className="EventInfo-links">
                       <Link to={`/events/${event.id}`}>Meer informatie</Link>
+                      <Link to="https://www.ticketmaster.nl/" target="_blank">
+                        Tickets
+                      </Link>
                     </div>
+
                     {/* <p className="EventInfo-description">{event.description}</p> */}
                   </div>
                 </div>

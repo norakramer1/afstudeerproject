@@ -17,7 +17,7 @@ const Account = () => {
   };
 
   return (
-    <div className="account">
+    <div className="Account">
       <h1>Account</h1>
       <p>User Email: {user && user.email}</p>
 
