@@ -62,7 +62,7 @@ const InterestSection = ({
             value="Design"
             onChange={(e) => handleInterestChange(e, "Design")}
           />
-          <label htmlFor="Film">Design</label>
+          <label htmlFor="Design">Design</label>
 
           <input
             type="checkbox"
